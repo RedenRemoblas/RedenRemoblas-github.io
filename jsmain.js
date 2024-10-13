@@ -92,16 +92,16 @@ document.addEventListener("DOMContentLoaded", function () {
 let currentIndex = 0;
   const images = document.querySelectorAll('.grid-image');
   const descriptions = [
-    'Pogi at Gwapo',
+
     'Wooowww',
     'Jabileee',
     'Pizzaa tapos Honda Civic',
-    'Swimmingg',
+
     '@reotutars',
     'First Day of School hahhaa',
     'OGs',
-    'Labooo bossing',
-    'wowwerss','nakss bonding','eatweell yum','@diko na alam','#bwhaha yung nakatayo baliw'
+  
+    'nakss bonding','eatweell yum','@diko na alam','#bwhaha yung nakatayo baliw'
   ];
 
   function openModal(image, description) {
