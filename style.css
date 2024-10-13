@@ -271,7 +271,7 @@ section h2 {
 .resume-container {
   scroll-behavior: smooth; 
   display: flex;
-  max-width: 750px;
+  max-width: 850px;
   
   font-family: Helvetica;
   margin: 0 auto;
