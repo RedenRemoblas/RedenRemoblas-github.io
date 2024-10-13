@@ -1,0 +1,1160 @@
+/* Base styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  /*background-color: #333;*/
+  background: linear-gradient(to right, #ffffff, #9c9c9c); 
+  font-family: 'Poppins' ;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  
+  
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+ 
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass effect */
+}
+
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo h1 {
+  font-size: 1rem;
+  background: linear-gradient(to right, #011936, #465362);
+  background-clip: text;
+  font-family: Stretch Pro;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: Helvetica - Bold;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 1px;
+    background-color: #1f1f1f;
+    display: block;
+    margin: 7px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger-active .line:nth-child(2) {
+    width: 0px;
+  }
+  
+  .hamburger-active .line:nth-child(1),
+  .hamburger-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  .hamburger-active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+  
+  .hamburger-active .line:nth-child(3) {
+    transform: translateY(-5px) rotate(90deg);
+  }
+  
+
+.menubar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.3s ease-in-out;
+  z-index: 1001;
+  padding-top: 50px;
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.menubar ul {
+  list-style: none;
+  text-align: left;
+}
+
+.menubar ul li {
+  padding: 10px 0;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  
+}
+
+.menubar.active {
+  left: 0%;
+}
+
+section {
+  padding: 100px 5%;
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* Home Section Styles */
+/* Fade-in from the left Animation */
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+        transform: translateX(-300px); /* Start slightly off-screen to the left */
+    }
+    to {
+        opacity: 100; /* End with opacity 1 */
+        transform: translateX(0); /* End in the original position */
+    }
+}
+
+
+
+
+/* Home Section Styles */
+.home-section {
+  scroll-behavior: smooth; 
+    background-image: url('images/me.jpg'); /* Adjust this path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Adjust height as needed */
+    color: white; /* Change text color for better visibility */
+    display: flex; /* Center content */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: left; /* Center items horizontally */
+    
+    text-shadow: 0px 1px 1px black;   /* Apply fade-in from left animation */
+}
+
+.home-section {
+  position: relative;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+ 
+}
+
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/me.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Adjust the amount of blur */
+  -webkit-filter: blur(4px);
+  z-index: -1; /* Ensure the blur stays behind the text */
+}
+
+
+.home-section h2 {
+    font-family: Stretch Pro;
+    text-shadow: 0px 2px 2px rgb(177, 177, 177);
+    font-size: 30px; /* Example: set font size */
+    color: rgb(0, 0, 0); /* Example: set text color */
+    margin: 20px 0; /* Example: set top and bottom margins */
+    line-height: .9; /* Example: set line height */
+    text-align: left; /* Example: center align the text */
+    opacity: 0.8 /* Example: slightly transparent */
+  /* Add shadow below the text */
+}
+
+
+.home-section p {
+    font-size: 1 rem; /* Adjust as needed */
+    color: rgb(44, 44, 44); /* Text color */
+   margin-left: 2px;/* Margin around the text */
+    text-align: left; /* Center align text */
+    text-shadow: 0px 1px 1px black; 
+    font-family: Helvetica - Bold;
+}
+
+
+
+
+#portfolio{
+  background: linear-gradient(to left, #ffffff, #9c9c9c); 
+}
+
+.resumeh1{
+  margin-bottom: 20px;
+  margin-left: 70px;
+  font-family: Stretch Pro;
+  color: #ffffff;
+  text-align: left;
+  text-shadow: 0px 1px 1px rgb(0, 0, 0); 
+    /* Apply fade-in from left animation */
+}
+
+
+.friends-title{
+  margin-bottom: 20px;
+  margin-left: 52px;
+  font-family: Stretch Pro;
+  color: #333;
+  text-align: left; font-family: Stretch Pro;
+}
+
+.friends-description{
+  font-size: 1 rem; /* Adjust as needed */
+    color: #333; /* Text color */
+   margin-left: 52px;/* Margin around the text */
+    text-align: left; /* Center align text */
+    text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+    font-family: Helvetica - Bold;
+    margin-bottom: 20px;
+}
+
+.resume-container {
+  scroll-behavior: smooth; 
+  display: flex;
+  max-width: 750px;
+  
+  font-family: Helvetica;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Black shadow */
+}
+
+
+.left-section {
+  width: 35%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.right-section {
+  width: 65%;
+  padding: 20px;
+}
+
+.right-section h1 {
+  margin-bottom: 20px;
+  margin-left: 5px;
+  font-family: Helvetica - Bold;
+  color: #333;
+  text-align: left;
+
+}
+
+.profile-picture {
+width: 150px; /* Set container width */
+height: 150px; /* Set container height */
+margin: 0 auto; /* Center the container */
+}
+
+.profile-picture img {
+width: 100%; /* Ensure the image takes up the full container */
+height: auto; /* Maintain the aspect ratio */
+border-radius: 50%; /* Keeps the image circular */
+border: 2px solid #ddd;
+}
+
+
+
+
+.contact-info, .about-me, .skills, .references {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+.contact-info a{
+  font-size: 15px;
+}
+
+
+.name-title h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.name-title h2 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.profile, .objectives, .education, .seminar-training {
+  margin-bottom: 20px;
+}
+
+
+
+/* Contact Info and left-section headers */
+.left-section h2 {
+  font-size: 18px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.right-section h1{
+  text-align: left;
+  font-size: 30px;
+}
+
+.right-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+/* Styling for the sections on the right */
+.right-section p {
+  margin-bottom: 8px;
+}
+
+strong {
+  color: #333;
+}
+
+.ref1{
+  margin-bottom: 10px;
+}
+
+.ref2{
+  margin-bottom: 10px;
+}
+
+
+.ref3{
+  margin-bottom: 10px;
+}
+
+
+
+#projectsection{
+  margin: 0px;
+  scroll-behavior: smooth; 
+  
+  
+}
+
+.container-title{
+  margin-bottom: 20px;
+  margin-right: 100px;
+  font-family: Stretch Pro;
+  color: #333;
+  text-align: left;
+}
+
+.container-description{
+  font-size: 1 rem; /* Adjust as needed */
+  color: #333; /* Text color */
+ margin-left: 0px;/* Margin around the text */
+  text-align: left; /* Center align text */
+  text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+  font-family: Helvetica - Bold;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+/* Initially hide the project items */
+.projects-content {
+  opacity: 0;
+  
+  transform: translateY(50px); /* Slide-up effect */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the item becomes visible, fade in and slide up */
+.projects-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.projects .projects-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.projects .projects-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px;
+  line-height: 1;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects .projects-filters li:hover,
+.projects .projects-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.projects .projects-filters li:first-child {
+  margin-left: 0;
+}
+
+.projects .projects-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .projects .projects-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.projects .projects-content {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+
+
+.projects .projects-content img {
+  transition: 0.3s;
+  width: 700px; /* Fixed width */
+  height: 300px; /* Set height */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+backdrop-filter: blur(10px); /* Frosted glass effect */
+
+
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block; /* Ensures no extra space below the image */
+  margin: 0 auto; /* Center the image horizontally, if needed */
+}
+
+
+.projects .projects-content .projects-info {
+  opacity: 0;
+  position: absolute;
+  text-shadow: 0px 1px 1px black; 
+  font-family: helvetica;
+  inset: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+
+.projects .projects-content .projects-info h4 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  text-shadow: 0px 1px 1px black; 
+  font-family: Stretch Pro;
+  padding: 5px 10px;
+  font-weight: 400;
+  color: #ffffff;
+  display: inline-block;
+  background-color: var(--accent-color);
+}
+
+.projects .projects-content .projects-info p {
+  position: absolute;
+  bottom: 10px;
+  
+  font-family: helvetica;
+  text-align: center;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.projects .projects-content .projects-info .preview-link,
+.projects .projects-content .projects-info .details-link {
+  position: absolute;
+  left: calc(50% - 40px);
+  font-size: 26px;
+  top: calc(50% - 14px);
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+}
+
+.projects .projects-content .projects-info .preview-link:hover,
+.projects .projects-content .projects-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.projects .projects-content .projects-info .details-link {
+  left: 50%;
+  font-size: 34px;
+  line-height: 0;
+}
+
+.projects .projects-content:hover .projects-info {
+  opacity: 1;
+}
+
+.projects .projects-content:hover img {
+  transform: scale(1.1);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+backdrop-filter: blur(10px); /* Frosted glass effect */
+
+border: 1px solid rgba(255, 255, 255, 0.2); 
+  
+}
+
+
+#familytree{
+  margin-top: 0px;
+  background: linear-gradient(to left, #ffffff, #9c9c9c); 
+ 
+
+}
+
+
+.family-title{
+  margin-bottom: 20px;
+  margin-left: 52px;
+  font-family: Stretch Pro;
+  color: #ffffff;
+  text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+  text-align: left; font-family: Stretch Pro;
+}
+
+.family-desc{
+  font-size: 1 rem; /* Adjust as needed */
+  background: linear-gradient(to left, #ffffff, #9c9c9c); 
+   margin-left: 52px;/* Margin around the text */
+    text-align: left; /* Center align text */
+    text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+    font-family: Helvetica - Bold;
+    margin-bottom: 20px;
+}
+
+.family-tree p{
+  font-family: helvetica - bold;
+  color: #fdfdfd;
+  text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+
+}
+
+.family-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px; /* Increase margin for more spacing around */
+}
+
+.parents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* More space between parents and children */
+}
+
+.person {
+  background-color: #b4b4b4;
+  color: white;
+  padding: 30px; /* Increase padding for larger background */
+  margin: 20px; /* Space between the person cards */
+  border-radius: 10px;
+  width: 330px; /* Make the person box larger */
+  text-align: center;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+backdrop-filter: blur(10px); /* Frosted glass effect */
+
+
+}
+
+.family-image {
+ 
+  width: 220px; /* Make the image larger */
+  height: 220px; /* Make the image larger */
+  border-radius: 0; /* No border-radius for a rectangular image */
+  margin-bottom: 15px; /* Space between image and name */
+  object-fit: cover; /* Maintain aspect ratio and fit container */
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+}
+
+.children .person {
+  margin: 0 30px; /* More space between child elements */
+}
+
+/* Lines between family members */
+
+
+.parents .person:last-child::after {
+  display: none; /* Remove line after the last parent */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .parents {
+    flex-direction: column; /* Stack parents vertically on smaller screens */
+  }
+
+  .person {
+    width: 100%; /* Make each person card take full width */
+    max-width: 300px; /* Add a max width to keep things from stretching too much */
+  }
+
+  .family-image {
+    width: 110px; /* Scale down the images */
+    height: 120px;
+  }
+
+  .children .person {
+   margin-right: 60px;
+   margin-bottom: 15px; /* Reduce margins between child elements */
+  }
+
+  .children {
+    flex-direction: column; /* Stack children vertically on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .person {
+    padding: 20px; /* Reduce padding for very small screens */
+    margin: 10px;
+  }
+
+  .family-image {
+    width: 100px; /* Scale down images further for small screens */
+    height: 100px;
+  }
+}
+
+
+
+#contacts-sec{
+  background: linear-gradient(to left, #ffffff, #9c9c9c); 
+ 
+}
+
+
+.friends{
+  margin: 0px;
+}
+
+.contacts-title{
+  margin-bottom: 20px;
+  margin-left: 52px;
+  font-family: Stretch Pro;
+  color: #ffffff;
+  text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+  text-align: left; font-family: Stretch Pro;
+}
+
+.contacts-desc{
+  font-size: 1 rem; /* Adjust as needed */
+    color: #333; /* Text color */
+   margin-left: 52px;/* Margin around the text */
+    text-align: left; /* Center align text */
+    text-shadow: 0px 1px 1px rgb(105, 105, 105); 
+    font-family: Helvetica - Bold;
+    background: linear-gradient(to left, #ffffff, #9c9c9c); 
+    margin-bottom: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s; /* Animation for zoom effect */
+}
+
+.grid-image:hover {
+  transform: scale(1.20); /* Zoom effect on hover */
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Ensure modal is on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 5% auto; /* Center the modal */
+  max-width: 60%;
+  max-height: 60%;
+  padding: 10px; /* Add padding for better appearance */
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh; /* Limit height for better visibility */
+}
+
+.modal-description {
+  color: white;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1.2em; /* Responsive font size */
+}
+
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.arrow {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px; /* Adjusted for better visibility */
+  right: 20px; /* Adjusted for better visibility */
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100; /* Ensure it's above other elements */
+}
+
+
+.contacts-sec{
+  margin-top: 0px;
+}
+
+
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f3f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.icon i {
+  font-size: 20px;
+  color: #333;
+}
+
+.details h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.details p {
+  margin: 0;
+  font-family: helvetica;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .contacts {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .contact-item {
+    margin-top: 20px;
+      justify-content: center;
+      max-width: none;
+      width: 100%;
+      text-align: center;
+  }
+
+  .icon {
+      margin-right: 20;
+      margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+  }
+
+  .details h4 {
+      font-size: 16px;
+  }
+
+  .details p {
+      font-size: 12px;
+  }
+}
+
+
+
+
+.contact-form {
+  width: 95%;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #d3d2d2;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.form-group {
+  display: flex;
+
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #494949;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .modal-description {
+    font-size: 1em; /* Smaller font size on smaller screens */
+  }
+  .arrow {
+    font-size: 24px; /* Smaller arrow size */
+  }
+  .close {
+    font-size: 30px; /* Smaller close button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 10% auto; /* Less margin on very small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Slide Up and Fade Animation */
+@keyframes slideUpFade {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+        transform: translateY(0); /* End in the original position */
+    }
+}
+
+/* Add this class to sections to trigger the animation */
+.fade-in {
+    animation: slideUpFade 0.9s ease-out forwards; /* Apply the animation */
+}
+
+
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: block; /* Show the hamburger on small screens */
+  }
+
+
+}
+
+
+
+/* Base styles for small screens */
+@media (max-width: 575px) {
+  .projects .projects-content img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .projects .projects-info h4 {
+    font-size: 12px;
+    margin-bottom: 10px; /* Adjust font size for smaller screens */
+  }
+
+  .projects .projects-info p {
+    font-size: 14px; /* Smaller font for project descriptions */
+  }
+
+  .projects .projects-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  
+  nav .logo h1 {
+    font-size: 0.9rem; /* Adjust logo font size */
+  }
+  
+  nav ul {
+    display: none; /* Hide the navbar links */
+  }
+  
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+  
+  .menubar {
+    width: 70%; /* Adjust menu size for smaller screens */
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 768px) {
+  .projects .projects-content img {
+    width: 100%; /* Responsive images */
+    height: auto;
+  }
+
+  .projects .projects-info h4 {
+    margin-bottom: 10px;
+    font-size: 14px; /* Slightly larger text */
+  }
+
+  .projects .projects-info p {
+    font-size: 16px;
+  }
+  
+  .projects .projects-content {
+    margin-bottom: 20px; /* Space between project items */
+  }
+  
+  nav .logo h1 {
+    font-size: 1rem;
+  }
+  
+  nav ul {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .menubar {
+    width: 50%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 769px) {
+  .projects .projects-content img {
+    width: 700px; /* Fixed width for large screens */
+    height: 300px;
+  }
+
+  .projects .projects-info h4 {
+    margin-bottom: 10px;
+    font-size: 18px; /* Larger text for bigger screens */
+  }
+
+  .projects .projects-content .projects-info p {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  nav ul {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .menubar {
+    display: none;
+  }
+}
+
+
+@media (max-width: 992px) {
+  
+  .projects .projects-content .projects-info p {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
+/* Very large screens */
+@media (min-width: 1200px) {
+  .projects .projects-content img {
+    width: 800px; /* Wider images on large screens */
+    height: 400px;
+  }
+
+  .projects .projects-info h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .projects .projects-content .projects-info p {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
